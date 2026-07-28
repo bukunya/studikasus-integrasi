@@ -1,0 +1,383 @@
+:root {
+    /* =====================================================
+1. TYPOGRAPHY (FONT FAMILIES)
+===================================================== */
+    --DMS-font-heading: "Plus Jakarta Sans", sans-serif;
+    --DMS-font-body: "DM Sans", sans-serif;
+    --DMS-font-mono: "Sometype Mono", monospace;
+
+    /* =====================================================
+2. COLOR PALETTE (PRIMARY & NEUTRAL VALUES)
+===================================================== */
+    /* Primary Scale */
+    --DMS-color-primary-50: #eefff4;
+    --DMS-color-primary-100: #d7ffe7;
+    --DMS-color-primary-200: #b2ffd1;
+    --DMS-color-primary-300: #76ffae;
+    --DMS-color-primary-400: #33f583;
+    --DMS-color-primary-500: #09de61;
+    --DMS-color-primary-600: #00c853;
+    --DMS-color-primary-700: #04913f;
+    --DMS-color-primary-800: #0a7136;
+    --DMS-color-primary-900: #0a5d2f;
+    --DMS-color-primary-950: #003418;
+
+    /* Neutral/Gray Scale */
+    --DMS-color-gray-50: #f9fafb;
+    --DMS-color-gray-100: #f3f4f6;
+    --DMS-color-gray-200: #e5e7eb;
+    --DMS-color-gray-300: #d1d5db;
+    --DMS-color-gray-400: #9ca3af;
+    --DMS-color-gray-500: #6b7280;
+    --DMS-color-gray-600: #4b5563;
+    --DMS-color-gray-700: #374151;
+    --DMS-color-gray-800: #1f2937;
+    --DMS-color-gray-900: #111827;
+
+    /* =====================================================
+3. UI & SEMANTIC COLORS
+===================================================== */
+    /* Brand Colors */
+    --DMS-color-primary: #00c853;
+    --DMS-color-primary-hover: #00a95c;
+    --DMS-color-primary-active: #009624;
+    --DMS-color-primary-soft: rgba(6, 19, 11, 0.08);
+    --DMS-color-black: #1a1a1a;
+    --DMS-color-white: #ffffff;
+
+    /* Success */
+    --DMS-color-success: #22a121;
+    --DMS-color-success-hover: #2eba2d;
+    --DMS-color-success-active: #1c791c;
+    --DMS-color-success-disabled: #8ee88d;
+
+    /* Danger */
+    --DMS-color-danger: #d8201d;
+    --DMS-color-danger-hover: #f4423f;
+    --DMS-color-danger-active: #bd1b18;
+    --DMS-color-danger-disabled: #fea4a3;
+
+    /* Warning & Info */
+    --DMS-color-warning: #fda018;
+    --DMS-color-warning-disabled: #ffecc6;
+    --DMS-color-info: #0a8dd0;
+    --DMS-color-info-disabled: #82d1f7;
+
+    /* =====================================================
+4. BACKGROUNDS & GRADIENTS
+===================================================== */
+    --DMS-bg-primary: var(--DMS-color-white);
+    --DMS-bg-secondary: var(--DMS-color-gray-50);
+    --DMS-bg-tertiary: var(--DMS-color-gray-100);
+
+    --DMS-gradient-primary: linear-gradient(
+        90deg,
+        var(--DMS-color-primary-600) 0%,
+        var(--DMS-color-primary-700) 100%
+    );
+    --DMS-gradient-primary-soft: linear-gradient(
+        90deg,
+        var(--DMS-color-primary-100) 0%,
+        var(--DMS-color-primary-300) 100%
+    );
+
+    /* =====================================================
+5. TEXT TOKENS
+===================================================== */
+    --DMS-text-primary: var(--DMS-color-black);
+    --DMS-text-secondary: var(--DMS-color-gray-600);
+    --DMS-text-muted: var(--DMS-color-gray-400);
+    --DMS-text-inverse: var(--DMS-color-white);
+
+    /* =====================================================
+6. BORDER & RADIUS (Multiple of 4px)
+===================================================== */
+    --DMS-border-light: var(--DMS-color-gray-200);
+    --DMS-border-medium: var(--DMS-color-gray-300);
+    --DMS-border-strong: var(--DMS-color-gray-500);
+
+    --DMS-radius-1: 4px;
+    --DMS-radius-2: 8px;
+    --DMS-radius-3: 12px;
+    --DMS-radius-4: 16px;
+    --DMS-radius-full: 999px;
+
+    /* =====================================================
+7. SPACING SYSTEM (Multiple of 4px)
+===================================================== */
+    --DMS-space-1: 4px;
+    --DMS-space-2: 8px;
+    --DMS-space-3: 12px;
+    --DMS-space-4: 16px;
+    --DMS-space-5: 20px;
+    --DMS-space-6: 24px;
+    --DMS-space-8: 32px;
+    --DMS-space-10: 40px;
+    --DMS-space-15: 60px;
+
+    /* =====================================================
+8. SHADOWS & OVERLAYS
+===================================================== */
+    --DMS-shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06);
+    --DMS-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --DMS-shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.16);
+
+    --DMS-overlay-light: rgba(255, 255, 255, 0.6);
+    --DMS-overlay-dark: rgba(0, 0, 0, 0.5);
+
+    /* =====================================================
+9. TYPOGRAPHY SPECS (Size, Weight, Height)
+===================================================== */
+    /* Font Sizes */
+    --DMS-text-xs: 10px;
+    --DMS-text-sm: 11px;
+    --DMS-text-lg: 14px;
+    --DMS-text-xl: 18px;
+    --DMS-text-h1: 40px;
+    --DMS-text-h2: 34px;
+    --DMS-text-h3: 28px;
+
+    /* Font Weights */
+    --DMS-font-regular: 400;
+    --DMS-font-medium: 500;
+    --DMS-font-semibold: 600;
+    --DMS-font-bold: 700;
+
+    /* Line Heights & Letter Spacing */
+    --DMS-line-height-xs: 1.2;
+    --DMS-line-height-md: 1.5;
+    --DMS-letter-spacing-tight: -0.02em;
+    --DMS-letter-spacing-wide: 0.02em;
+
+    /* =====================================================
+10. LAYOUT & GRID UTILS
+===================================================== */
+    --DMS-z-dropdown: 1000;
+    --DMS-z-modal: 1050;
+    --DMS-breakpoint-lg: 992px;
+    --DMS-breakpoint-xl: 1200px;
+
+    --DMS-grid-cols-2: repeat(2, minmax(0, 1fr));
+    --DMS-grid-cols-3: repeat(3, minmax(0, 1fr));
+    --DMS-col-span-2: span 2 / span 2;
+
+    /* Transitions */
+    --DMS-transition-normal: 0.25s ease;
+    --DMS-transition-slow: 0.4s ease;
+}
+
+/* Global and Shared */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*border: 0.1px solid red;*/
+}
+
+.tempborder {
+    border: 0.1px solid red;
+}
+
+body {
+    font-family: var(--DMS-font-body);
+    background-color: var(--DMS-color-gray-50);
+    color: var(--DMS-text-primary);
+}
+
+.DMS-text-green {
+    color: var(--DMS-color-primary);
+}
+
+.DMS-mono {
+    font-family: var(--DMS-font-mono);
+}
+
+.DMS-uppercase {
+    text-transform: uppercase;
+}
+
+.DMS-container,
+.DMS-container-dark {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: var(--DMS-shadow-sm);
+}
+
+.DMS-container {
+    background-color: var(--DMS-bg-primary);
+}
+
+.DMS-dark-wrapper {
+    background-color: var(--DMS-color-gray-900);
+}
+
+.DMS-container-dark {
+    color: var(--DMS-text-inverse);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--DMS-font-heading);
+    margin-bottom: var(--DMS-space-4);
+}
+
+p,
+span {
+    font-family: var(--DMS-font-body);
+    margin-bottom: var(--DMS-space-4);
+    color: var(--DMS-text-secondary);
+}
+
+.DMS-grid-3 {
+    display: grid;
+    grid-template-columns: var(--DMS-grid-cols-3);
+    height: 100%;
+    width: 100%;
+}
+
+.DMS-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    height: 100%;
+    width: 100%;
+}
+
+.DMS-grid-span-4 {
+    grid-column: span 4;
+    padding-right: var(--DMS-space-15);
+}
+
+.DMS-grid-span-2 {
+    grid-column: span 2;
+    padding-right: var(--DMS-space-15);
+}
+
+.DMS-grid-span-1 {
+    grid-column: span 1;
+}
+
+header,
+section,
+footer {
+    padding: var(--DMS-space-15) var(--DMS-space-15);
+    border: 1px solid var(--DMS-border-light);
+}
+
+.DMS-container-dark {
+    padding: var(--DMS-space-15) var(--DMS-space-15);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--DMS-border-light);
+    margin: var(--DMS-space-4) 0;
+}
+
+.DMS-button-group-flex {
+    display: flex;
+    align-items: end;
+    width: fit-content;
+    height: 100%;
+}
+
+.DMS-button-group {
+    display: flex;
+    gap: var(--DMS-space-4);
+    background-color: var(--DMS-bg-tertiary);
+    width: fit-content;
+    height: fit-content;
+    padding: var(--DMS-space-2) var(--DMS-space-4);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: var(--DMS-space-2) var(--DMS-space-4);
+    background-color: var(--DMS-bg-tertiary);
+}
+
+.DMS-button-active {
+    border: 1px solid var(--DMS-border-light);
+    background-color: var(--DMS-color-white);
+    box-shadow: var(--DMS-shadow-sm);
+}
+
+.DMS-custom-grid-border {
+    gap: 1px;
+    background-color: var(--DMS-border-light);
+    overflow: hidden;
+    border: 1px solid var(--DMS-border-light);
+    width: 100%;
+    height: 100%;
+}
+
+.DMS-custom-border {
+    background-color: var(--DMS-color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: var(--DMS-space-8) 0;
+    gap: var(--DMS-space-4);
+}
+
+.DMS-bg-light-green {
+    background-color: var(--DMS-color-primary-50);
+}
+
+.DMS-flex {
+    display: flex;
+}
+
+.DMS-requirement-analysis {
+    border: 1px solid var(--DMS-border-light);
+    background-color: var(--DMS-color-gray-50);
+    padding: var(--DMS-space-8) var(--DMS-space-8);
+    margin: 0 0 var(--DMS-space-15) 0;
+}
+
+.lucide-target {
+    background-color: #ffe1e0;
+    color: var(--DMS-color-danger);
+    padding: var(--DMS-space-2) var(--DMS-space-2);
+}
+
+.lucide-lightbulb {
+    background-color: #cfeefc;
+    color: var(--DMS-color-info);
+    padding: var(--DMS-space-2) var(--DMS-space-2);
+}
+
+.lucide-trending-up {
+    background-color: #e0f7e9;
+    color: var(--DMS-color-success);
+    padding: var(--DMS-space-2) var(--DMS-space-2);
+}
+
+.DMS-icon-adjust {
+    margin-right: var(--DMS-space-4);
+    margin-top: var(--DMS-space-1);
+}
+
+.DMS-industries-icon {
+    color: var(--DMS-color-gray-500);
+}
+
+.DMS-industries-icon-active {
+    color: var(--DMS-color-primary);
+}
+
+.DMS-industries-active {
+    border: 1px solid var(--DMS-color-primary);
+}
