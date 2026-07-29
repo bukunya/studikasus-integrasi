@@ -219,3 +219,180 @@ const industri = [
     description: "Excepteur sint occaecat cupidatat non proident",
   },
 ];
+
+// ---------- INTEGRASI ----------
+const networkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="16" y="16" width="6" height="6" rx="1"></rect><path d="M12 8v4M12 12H5v4M12 12h7v4"></path></svg>`;
+
+const protocols = [
+  {
+    key: "REST API",
+    title: "Dukungan REST API",
+    desc: "Standar industri untuk komunikasi web yang ringan, stateless, dan scalable. Mendukung integrasi modern dengan performa tinggi.",
+    badges: ["Reliable", "Flexible", "Scalable"]
+  },
+  {
+    key: "SOAP",
+    title: "Dukungan SOAP",
+    desc: "Protokol pesan berbasis XML dengan standar keamanan ketat, cocok untuk transaksi enterprise yang membutuhkan kontrak data yang kaku.",
+    badges: ["Secure", "Structured", "Enterprise-Ready"]
+  },
+  {
+    key: "GraphQL",
+    title: "Dukungan GraphQL",
+    desc: "Bahasa query fleksibel yang memungkinkan aplikasi mengambil hanya data yang dibutuhkan, mengurangi over-fetching dan mempercepat respons.",
+    badges: ["Efficient", "Flexible", "Typed"]
+  },
+  {
+    key: "Webhooks",
+    title: "Dukungan Webhooks",
+    desc: "Notifikasi berbasis event yang dikirim secara real-time saat data berubah, sehingga sistem lain dapat bereaksi tanpa polling.",
+    badges: ["Real-time", "Event-Driven", "Lightweight"]
+  },
+  {
+    key: "JSON",
+    title: "Dukungan Format JSON",
+    desc: "Format pertukaran data yang ringan dan mudah dibaca, menjadi standar de-facto untuk komunikasi API modern.",
+    badges: ["Lightweight", "Readable", "Universal"]
+  },
+  {
+    key: "XML",
+    title: "Dukungan Format XML",
+    desc: "Format markup terstruktur dengan validasi skema yang ketat, ideal untuk pertukaran data enterprise yang kompleks.",
+    badges: ["Structured", "Validated", "Portable"]
+  },
+  {
+    key: "EDI",
+    title: "Dukungan EDI",
+    desc: "Standar pertukaran dokumen bisnis elektronik antar perusahaan, mempercepat proses pengadaan dan logistik.",
+    badges: ["Standardized", "Automated", "Trusted"]
+  },
+  {
+    key: "CSV",
+    title: "Dukungan Format CSV",
+    desc: "Format tabular sederhana yang mudah diproses, cocok untuk pertukaran data dalam jumlah besar antar sistem.",
+    badges: ["Simple", "Universal", "Bulk-Ready"]
+  }
+];
+
+const departments = [
+  {
+    key: "Retail & E-Commerce",
+    flow: "ERP → E-Commerce → Warehouse",
+    tantangan: "Sinkronisasi stok lambat menyebabkan overselling di marketplace dan keterlambatan pengiriman.",
+    dampak: "Mencegah overselling, mempercepat pemenuhan pesanan, dan meningkatkan kepuasan pelanggan.",
+    solusi: "Integrasi real-time antara platform E-Commerce, sistem ERP, dan Warehouse Management.",
+    hasil: "+40% Efisiensi Pemrosesan Pesanan"
+  },
+  {
+    key: "Marketing & Sales",
+    flow: "CRM → Marketing Platform → Analytics",
+    tantangan: "Data pelanggan terpecah di berbagai platform membuat kampanye tidak tepat sasaran.",
+    dampak: "Kampanye lebih personal, konversi meningkat, dan pengambilan keputusan berbasis data.",
+    solusi: "Sinkronisasi otomatis data leads dan customer journey ke seluruh platform marketing.",
+    hasil: "+35% Peningkatan Konversi Kampanye"
+  },
+  {
+    key: "HR & Finance",
+    flow: "HRIS → Payroll → Banking",
+    tantangan: "Proses payroll manual rentan kesalahan dan memakan waktu tim finance setiap bulan.",
+    dampak: "Penggajian lebih akurat, patuh regulasi, dan tim finance fokus pada hal strategis.",
+    solusi: "Integrasi otomatis data kehadiran, HRIS, sistem payroll, hingga transfer perbankan.",
+    hasil: "+60% Percepatan Proses Penggajian"
+  }
+];
+
+// icon path directory: https://lucide.dev
+const warnIcon = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0Z"></path></svg>`;
+const impactIcon = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"></path><path d="M16 7h6v6"></path></svg>`;
+const bulbIcon = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.47c.6.55 1 1.36 1 2.13V16h6v-1.4c0-.77.4-1.58 1-2.13A6 6 0 0 0 12 2Z"></path></svg>`;
+const checkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>`;
+
+const protocolTabsEl = document.getElementById("DMS-protocol-tabs");
+const protocolPanelEl = document.getElementById("DMS-protocol-panel");
+const protocolSection = document.getElementById("DMS-section-protocols");
+
+function renderProtocolPanel(p) {
+  protocolPanelEl.innerHTML = `
+    <div class="DMS-protocol-icon">${networkIcon}</div>
+    <h3>${p.title}</h3>
+    <p>${p.desc}</p>
+    <div class="DMS-badge-row">
+      ${p.badges.map(b => `<span>${b}</span>`).join("")}
+    </div>
+  `;
+}
+
+function setActiveProtocol(index, { scroll = true } = {}) {
+  [...protocolTabsEl.children].forEach((btn, i) => {
+    const isActive = i === index;
+    btn.classList.toggle("DMS-is-active", isActive);
+    btn.setAttribute("aria-selected", isActive ? "true" : "false");
+  });
+  renderProtocolPanel(protocols[index]);
+  if (scroll) {
+    protocolSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+protocols.forEach((p, i) => {
+  const btn = document.createElement("button");
+  btn.className = "DMS-tab-btn" + (i === 0 ? " DMS-is-active" : "");
+  btn.textContent = p.key;
+  btn.type = "button";
+  btn.role = "tab";
+  btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
+  btn.addEventListener("click", () => setActiveProtocol(i));
+  protocolTabsEl.appendChild(btn);
+});
+renderProtocolPanel(protocols[0]);
+
+const deptTabsEl = document.getElementById("DMS-dept-tabs");
+const deptBodyEl = document.getElementById("DMS-dept-body");
+const deptShellEl = document.getElementById("DMS-dept-shell");
+
+function renderDeptBody(d) {
+  deptBodyEl.innerHTML = `
+    <div class="DMS-dept-card">
+      <h4><span class="DMS-icon-chip DMS-icon-chip--warn">${warnIcon}</span>Tantangan</h4>
+      <p>${d.tantangan}</p>
+    </div>
+    <div class="DMS-dept-card">
+      <h4><span class="DMS-icon-chip DMS-icon-chip--impact">${impactIcon}</span>Dampak Bisnis</h4>
+      <p>${d.dampak}</p>
+    </div>
+    <div class="DMS-dept-card">
+      <h4><span class="DMS-icon-chip DMS-icon-chip--solution">${bulbIcon}</span>Solusi</h4>
+      <p>${d.solusi}</p>
+    </div>
+    <div>
+      <div class="DMS-result-box">
+        <div class="DMS-result-box__tag">${checkIcon} Hasil yang Diperoleh</div>
+        <p class="DMS-result-box__stat">${d.hasil}</p>
+      </div>
+    </div>
+  `;
+}
+
+function setActiveDept(index, { scroll = true } = {}) {
+  [...deptTabsEl.children].forEach((btn, i) => {
+    const isActive = i === index;
+    btn.classList.toggle("DMS-is-active", isActive);
+    btn.setAttribute("aria-selected", isActive ? "true" : "false");
+  });
+  renderDeptBody(departments[index]);
+  if (scroll) {
+    deptShellEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+departments.forEach((d, i) => {
+  const btn = document.createElement("button");
+  btn.className = "DMS-dept-btn" + (i === 0 ? " DMS-is-active" : "");
+  btn.type = "button";
+  btn.role = "tab";
+  btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
+  btn.innerHTML = `<span class="DMS-dept-btn__name">${d.key}</span><span class="DMS-dept-btn__flow">${d.flow}</span>`;
+  btn.addEventListener("click", () => setActiveDept(i));
+  deptTabsEl.appendChild(btn);
+});
+renderDeptBody(departments[0]);
