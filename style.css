@@ -175,10 +175,6 @@
     /*border: 0.1px solid red;*/
 }
 
-.tempborder {
-    border: 0.1px solid red;
-}
-
 body {
     font-family: var(--DMS-font-body);
     background-color: var(--DMS-color-gray-50);
@@ -252,18 +248,21 @@ span {
     width: 100%;
 }
 
-.DMS-grid-span-4 {
+.DMS-grid-span-4-padding {
     grid-column: span 4;
-    padding-right: var(--DMS-space-15);
 }
 
-.DMS-grid-span-2 {
+.DMS-grid-span-2-padding {
     grid-column: span 2;
     padding-right: var(--DMS-space-15);
 }
 
 .DMS-grid-span-1 {
     grid-column: span 1;
+}
+
+#ind-banner-desc {
+    margin: var(--DMS-space-4);
 }
 
 header,
@@ -329,7 +328,6 @@ button {
     align-items: center;
     flex-direction: column;
     padding: var(--DMS-space-8) 0;
-    gap: var(--DMS-space-4);
 }
 
 .DMS-bg-light-green {
@@ -390,6 +388,7 @@ button {
     position: relative;
     margin: var(--DMS-space-8) 0 var(--DMS-space-10) 0;
     padding: 0 var(--DMS-space-8);
+    /*border: 1px solid red;*/
 }
 
 .DMS-stepper-container::before {
@@ -401,6 +400,7 @@ button {
     height: 1px;
     background-color: var(--DMS-border-light);
     z-index: 1;
+    /*border: 1px solid blue;*/
 }
 
 .DMS-step-button {
@@ -449,10 +449,12 @@ button {
     font-weight: var(--DMS-font-bold);
 }
 
-.DMS-testimonial-header {
+.DMS-testimonial-header h1,
+.DMS-testimonial-header p {
     text-align: center;
     max-width: 650px;
     margin: 0 auto var(--DMS-space-10) auto;
+    color: var(--DMS-text-inverse);
 }
 
 .DMS-slideshow-container {
@@ -465,6 +467,12 @@ button {
 .DMS-mySlides {
     display: none;
     animation: fadeIn 0.4s ease-in-out;
+}
+
+.DMS-quote h3 {
+    text-align: center;
+    font-size: var(--DMS-text-h3);
+    font-weight: var(--DMS-font-regular);
 }
 
 .DMS-divider {
@@ -545,4 +553,66 @@ button {
 .DMS-dot.DMS-active {
     background-color: var(--DMS-color-primary);
     width: 24px;
+}
+
+* {
+    /*border: 0.1px solid red;*/
+}
+
+@media (max-width: 768px) {
+    .DMS-grid-span-2-padding,
+    .DMS-grid-span-1 {
+        grid-column: span 3;
+        padding-right: 0;
+        /*border: 1px solid red;*/
+        /*text-align: center;*/
+        width: 100%;
+    }
+
+    .DMS-text-center-smsc {
+        text-align: center;
+    }
+
+    header,
+    section,
+    footer {
+        padding: var(--DMS-space-15) var(--DMS-space-4);
+    }
+
+    .DMS-button-group-flex {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .DMS-button-group {
+        padding: var(--DMS-space-2) var(--DMS-space-2);
+    }
+
+    .DMS-slide-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--DMS-space-4);
+        text-align: center;
+    }
+
+    .DMS-stepper-container {
+        flex-wrap: wrap;
+    }
+
+    .DMS-stepper-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        background-color: var(--DMS-border-light);
+        z-index: 1;
+        /*border: 1px solid blue;*/
+    }
+
+    .DMS-step-button {
+        flex-direction: row;
+        padding: var(--DMS-space-4);
+    }
 }
