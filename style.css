@@ -531,9 +531,6 @@ button {
     margin-bottom: var(--DMS-space-10);
 }
 
-/* =====================================================
-    PROTOCOL TABS
-===================================================== */
 .DMS-tabbar {
     display: flex;
     flex-wrap: wrap;
@@ -648,9 +645,7 @@ button {
     background: var(--DMS-color-primary);
 }
 
-/* =====================================================
-    DEPARTMENT TABS & CARDS
-===================================================== */
+
 .DMS-dept-shell {
     border: 1px solid var(--DMS-border-light);
     border-radius: var(--DMS-radius-4);
