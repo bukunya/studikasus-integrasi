@@ -1,0 +1,1552 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--<link rel="stylesheet" href="style.css" />-->
+        <title>Studi Kasus</title>
+        <style>
+            :root {
+                /* =====================================================
+        1. TYPOGRAPHY (FONT FAMILIES)
+        ===================================================== */
+                --DMS-font-heading: "Plus Jakarta Sans", sans-serif;
+                --DMS-font-body: "DM Sans", sans-serif;
+                --DMS-font-mono: "Sometype Mono", monospace;
+
+                /* =====================================================
+        2. COLOR PALETTE (PRIMARY & NEUTRAL VALUES)
+        ===================================================== */
+                /* Primary Scale */
+                --DMS-color-primary-50: #eefff4;
+                --DMS-color-primary-100: #d7ffe7;
+                --DMS-color-primary-200: #b2ffd1;
+                --DMS-color-primary-300: #76ffae;
+                --DMS-color-primary-400: #33f583;
+                --DMS-color-primary-500: #09de61;
+                --DMS-color-primary-600: #00c853;
+                --DMS-color-primary-700: #04913f;
+                --DMS-color-primary-800: #0a7136;
+                --DMS-color-primary-900: #0a5d2f;
+                --DMS-color-primary-950: #003418;
+
+                /* Neutral/Gray Scale */
+                --DMS-color-gray-50: #f9fafb;
+                --DMS-color-gray-100: #f3f4f6;
+                --DMS-color-gray-200: #e5e7eb;
+                --DMS-color-gray-300: #d1d5db;
+                --DMS-color-gray-400: #9ca3af;
+                --DMS-color-gray-500: #6b7280;
+                --DMS-color-gray-600: #4b5563;
+                --DMS-color-gray-700: #374151;
+                --DMS-color-gray-800: #1f2937;
+                --DMS-color-gray-900: #111827;
+
+                /* =====================================================
+        3. UI & SEMANTIC COLORS
+        ===================================================== */
+                /* Brand Colors */
+                --DMS-color-primary: #00c853;
+                --DMS-color-primary-hover: #00a95c;
+                --DMS-color-primary-active: #009624;
+                --DMS-color-primary-soft: rgba(6, 19, 11, 0.08);
+                --DMS-color-black: #1a1a1a;
+                --DMS-color-white: #ffffff;
+
+                /* Success */
+                --DMS-color-success: #22a121;
+                --DMS-color-success-hover: #2eba2d;
+                --DMS-color-success-active: #1c791c;
+                --DMS-color-success-disabled: #8ee88d;
+
+                /* Danger */
+                --DMS-color-danger: #d8201d;
+                --DMS-color-danger-hover: #f4423f;
+                --DMS-color-danger-active: #bd1b18;
+                --DMS-color-danger-disabled: #fea4a3;
+
+                /* Warning & Info */
+                --DMS-color-warning: #fda018;
+                --DMS-color-warning-disabled: #ffecc6;
+                --DMS-color-info: #0a8dd0;
+                --DMS-color-info-disabled: #82d1f7;
+
+                /* =====================================================
+        4. BACKGROUNDS & GRADIENTS
+        ===================================================== */
+                --DMS-bg-primary: var(--DMS-color-white);
+                --DMS-bg-secondary: var(--DMS-color-gray-50);
+                --DMS-bg-tertiary: var(--DMS-color-gray-100);
+
+                --DMS-gradient-primary: linear-gradient(
+                    90deg,
+                    var(--DMS-color-primary-600) 0%,
+                    var(--DMS-color-primary-700) 100%
+                );
+                --DMS-gradient-primary-soft: linear-gradient(
+                    90deg,
+                    var(--DMS-color-primary-100) 0%,
+                    var(--DMS-color-primary-300) 100%
+                );
+
+                /* =====================================================
+        5. TEXT TOKENS
+        ===================================================== */
+                --DMS-text-primary: var(--DMS-color-black);
+                --DMS-text-secondary: var(--DMS-color-gray-600);
+                --DMS-text-muted: var(--DMS-color-gray-400);
+                --DMS-text-inverse: var(--DMS-color-white);
+
+                /* =====================================================
+        6. BORDER & RADIUS (Multiple of 4px)
+        ===================================================== */
+                --DMS-border-light: var(--DMS-color-gray-200);
+                --DMS-border-medium: var(--DMS-color-gray-300);
+                --DMS-border-strong: var(--DMS-color-gray-500);
+
+                --DMS-radius-1: 4px;
+                --DMS-radius-2: 8px;
+                --DMS-radius-3: 12px;
+                --DMS-radius-4: 16px;
+                --DMS-radius-full: 999px;
+
+                /* =====================================================
+        7. SPACING SYSTEM (Multiple of 4px)
+        ===================================================== */
+                --DMS-space-1: 4px;
+                --DMS-space-2: 8px;
+                --DMS-space-3: 12px;
+                --DMS-space-4: 16px;
+                --DMS-space-5: 20px;
+                --DMS-space-6: 24px;
+                --DMS-space-8: 32px;
+                --DMS-space-10: 40px;
+                --DMS-space-15: 60px;
+
+                /* =====================================================
+        8. SHADOWS & OVERLAYS
+        ===================================================== */
+                --DMS-shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06);
+                --DMS-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+                --DMS-shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.16);
+
+                --DMS-overlay-light: rgba(255, 255, 255, 0.6);
+                --DMS-overlay-dark: rgba(0, 0, 0, 0.5);
+
+                /* =====================================================
+        9. TYPOGRAPHY SPECS (Size, Weight, Height)
+        ===================================================== */
+                /* Font Sizes */
+                --DMS-text-xs: 10px;
+                --DMS-text-sm: 11px;
+                --DMS-text-lg: 14px;
+                --DMS-text-xl: 18px;
+                --DMS-text-h1: 40px;
+                --DMS-text-h2: 34px;
+                --DMS-text-h3: 28px;
+
+                /* Font Weights */
+                --DMS-font-regular: 400;
+                --DMS-font-medium: 500;
+                --DMS-font-semibold: 600;
+                --DMS-font-bold: 700;
+
+                /* Line Heights & Letter Spacing */
+                --DMS-line-height-xs: 1.2;
+                --DMS-line-height-md: 1.5;
+                --DMS-letter-spacing-tight: -0.02em;
+                --DMS-letter-spacing-wide: 0.02em;
+
+                /* =====================================================
+        10. LAYOUT & GRID UTILS
+        ===================================================== */
+                --DMS-z-dropdown: 1000;
+                --DMS-z-modal: 1050;
+                --DMS-breakpoint-lg: 992px;
+                --DMS-breakpoint-xl: 1200px;
+
+                --DMS-grid-cols-2: repeat(2, minmax(0, 1fr));
+                --DMS-grid-cols-3: repeat(3, minmax(0, 1fr));
+                --DMS-col-span-2: span 2 / span 2;
+
+                /* Transitions */
+                --DMS-transition-normal: 0.25s ease;
+                --DMS-transition-slow: 0.4s ease;
+            }
+
+            /* Global and Shared */
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                /*border: 0.1px solid red;*/
+            }
+
+            body {
+                font-family: var(--DMS-font-body);
+                background-color: var(--DMS-color-gray-50);
+                color: var(--DMS-text-primary);
+            }
+
+            .DMS-text-green {
+                color: var(--DMS-color-primary);
+            }
+
+            .DMS-mono {
+                font-family: var(--DMS-font-mono);
+            }
+
+            .DMS-uppercase {
+                text-transform: uppercase;
+            }
+
+            .DMS-container,
+            .DMS-container-dark {
+                max-width: 1200px;
+                margin: 0 auto;
+                box-shadow: var(--DMS-shadow-sm);
+            }
+
+            .DMS-container {
+                background-color: var(--DMS-bg-primary);
+            }
+
+            .DMS-dark-wrapper {
+                background-color: var(--DMS-color-gray-900);
+            }
+
+            .DMS-container-dark {
+                color: var(--DMS-text-inverse);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: var(--DMS-font-heading);
+                margin-bottom: var(--DMS-space-4);
+            }
+
+            p,
+            span {
+                font-family: var(--DMS-font-body);
+                margin-bottom: var(--DMS-space-4);
+                color: var(--DMS-text-secondary);
+            }
+
+            .DMS-grid-3 {
+                display: grid;
+                grid-template-columns: var(--DMS-grid-cols-3);
+                height: 100%;
+                width: 100%;
+            }
+
+            .DMS-grid-4 {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                height: 100%;
+                width: 100%;
+            }
+
+            .DMS-grid-span-4-padding {
+                grid-column: span 4;
+            }
+
+            .DMS-grid-span-2-padding {
+                grid-column: span 2;
+                padding-right: var(--DMS-space-15);
+            }
+
+            .DMS-grid-span-1 {
+                grid-column: span 1;
+            }
+
+            #ind-banner-desc {
+                margin: var(--DMS-space-4);
+            }
+
+            header,
+            section,
+            footer {
+                padding: var(--DMS-space-15) var(--DMS-space-15);
+                border: 1px solid var(--DMS-border-light);
+            }
+
+            .DMS-container-dark {
+                padding: var(--DMS-space-15) var(--DMS-space-15);
+            }
+
+            hr {
+                border: 0;
+                height: 1px;
+                background-color: var(--DMS-border-light);
+                margin: var(--DMS-space-4) 0;
+            }
+
+            .DMS-button-group-flex {
+                display: flex;
+                align-items: end;
+                width: fit-content;
+                height: 100%;
+            }
+
+            .DMS-button-group {
+                display: flex;
+                gap: var(--DMS-space-4);
+                background-color: var(--DMS-bg-tertiary);
+                width: fit-content;
+                height: fit-content;
+                padding: var(--DMS-space-2) var(--DMS-space-4);
+            }
+
+            button {
+                border: none;
+                cursor: pointer;
+                padding: var(--DMS-space-2) var(--DMS-space-4);
+                background-color: var(--DMS-bg-tertiary);
+            }
+
+            .DMS-button-active {
+                border: 1px solid var(--DMS-border-light);
+                background-color: var(--DMS-color-white);
+                box-shadow: var(--DMS-shadow-sm);
+            }
+
+            .DMS-custom-grid-border {
+                gap: 1px;
+                background-color: var(--DMS-border-light);
+                overflow: hidden;
+                border: 1px solid var(--DMS-border-light);
+                width: 100%;
+                height: 100%;
+            }
+
+            .DMS-custom-border {
+                background-color: var(--DMS-color-white);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: var(--DMS-space-8) 0;
+            }
+
+            .DMS-bg-light-green {
+                background-color: var(--DMS-color-primary-50);
+            }
+
+            .DMS-flex {
+                display: flex;
+            }
+
+            .DMS-requirement-analysis {
+                border: 1px solid var(--DMS-border-light);
+                background-color: var(--DMS-color-gray-50);
+                padding: var(--DMS-space-8) var(--DMS-space-8);
+                margin: 0 0 var(--DMS-space-15) 0;
+            }
+
+            .lucide-target {
+                background-color: #ffe1e0;
+                color: var(--DMS-color-danger);
+                padding: var(--DMS-space-2) var(--DMS-space-2);
+            }
+
+            .lucide-lightbulb {
+                background-color: #cfeefc;
+                color: var(--DMS-color-info);
+                padding: var(--DMS-space-2) var(--DMS-space-2);
+            }
+
+            .lucide-trending-up {
+                background-color: #e0f7e9;
+                color: var(--DMS-color-success);
+                padding: var(--DMS-space-2) var(--DMS-space-2);
+            }
+
+            .DMS-icon-adjust {
+                margin-right: var(--DMS-space-4);
+                margin-top: var(--DMS-space-1);
+            }
+
+            .DMS-industries-icon {
+                color: var(--DMS-color-gray-500);
+            }
+
+            .DMS-industries-icon-active {
+                color: var(--DMS-color-primary);
+            }
+
+            .DMS-industries-active {
+                border: 1px solid var(--DMS-color-primary);
+            }
+
+            /* WTHLY */
+            .DMS-stepper-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                margin: var(--DMS-space-8) 0 var(--DMS-space-10) 0;
+                padding: 0 var(--DMS-space-8);
+                /*border: 1px solid red;*/
+            }
+
+            .DMS-stepper-container::before {
+                content: "";
+                position: absolute;
+                top: 28px;
+                left: 80px;
+                right: 80px;
+                height: 1px;
+                background-color: var(--DMS-border-light);
+                z-index: 1;
+                /*border: 1px solid blue;*/
+            }
+
+            .DMS-step-button {
+                background: transparent;
+                border: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: var(--DMS-space-3);
+                cursor: pointer;
+                position: relative;
+                z-index: 2;
+                padding: 0;
+            }
+
+            .DMS-step-circle {
+                width: 56px;
+                height: 56px;
+                border-radius: var(--DMS-radius-full);
+                background-color: var(--DMS-bg-primary);
+                border: 1px solid var(--DMS-border-medium);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--DMS-text-secondary);
+                transition: all var(--DMS-transition-normal);
+            }
+
+            .DMS-step-button span {
+                font-size: var(--DMS-text-lg);
+                font-weight: var(--DMS-font-medium);
+                color: var(--DMS-text-secondary);
+                margin-bottom: 0;
+                transition: color var(--DMS-transition-normal);
+            }
+
+            .DMS-step-button.active .DMS-step-circle {
+                background-color: var(--DMS-color-primary);
+                border-color: var(--DMS-color-primary);
+                color: var(--DMS-color-white);
+                box-shadow: 0 0 0 4px var(--DMS-color-primary-100);
+            }
+
+            .DMS-step-button.active span {
+                color: var(--DMS-color-primary);
+                font-weight: var(--DMS-font-bold);
+            }
+
+            .DMS-testimonial-header h1,
+            .DMS-testimonial-header p {
+                text-align: center;
+                max-width: 650px;
+                margin: 0 auto var(--DMS-space-10) auto;
+                color: var(--DMS-text-inverse);
+            }
+
+            .DMS-slideshow-container {
+                max-width: 800px;
+                margin: 0 auto;
+                position: relative;
+                text-align: left;
+            }
+
+            .DMS-mySlides {
+                display: none;
+                animation: fadeIn 0.4s ease-in-out;
+            }
+
+            .DMS-quote h3 {
+                text-align: center;
+                font-size: var(--DMS-text-h3);
+                font-weight: var(--DMS-font-regular);
+            }
+
+            .DMS-divider {
+                border: 0;
+                height: 1px;
+                background-color: var(--DMS-color-gray-800);
+                margin: var(--DMS-space-6) 0;
+            }
+
+            .DMS-slide-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: var(--DMS-space-8);
+            }
+
+            .DMS-author-info h3 {
+                font-size: var(--DMS-text-lg);
+                color: var(--DMS-text-inverse);
+                margin-bottom: var(--DMS-space-1);
+            }
+
+            .DMS-author-info p {
+                font-size: var(--DMS-text-lg);
+                color: var(--DMS-color-gray-400);
+                margin-bottom: 0;
+            }
+
+            .DMS-metric-badge {
+                background-color: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                padding: var(--DMS-space-3) var(--DMS-space-5);
+                border-radius: var(--DMS-radius-2);
+            }
+
+            .DMS-metric-badge p {
+                margin-bottom: 0;
+                font-size: var(--DMS-text-lg);
+                font-weight: var(--DMS-font-medium);
+            }
+
+            .DMS-controls-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: var(--DMS-space-4);
+                margin-top: var(--DMS-space-6);
+            }
+
+            .DMS-nav-btn {
+                background: transparent;
+                border: 1px solid var(--DMS-color-gray-700);
+                color: var(--DMS-color-gray-400);
+                width: 36px;
+                height: 36px;
+                border-radius: var(--DMS-radius-full);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+
+            .DMS-dots-group {
+                display: flex;
+                align-items: center;
+                gap: var(--DMS-space-2);
+            }
+
+            .DMS-dot {
+                cursor: pointer;
+                height: 8px;
+                width: 8px;
+                background-color: var(--DMS-color-gray-700);
+                border-radius: var(--DMS-radius-full);
+                display: inline-block;
+            }
+
+            .DMS-dot.DMS-active {
+                background-color: var(--DMS-color-primary);
+                width: 24px;
+            }
+
+            * {
+                /*border: 0.1px solid red;*/
+            }
+
+            @media (max-width: 768px) {
+                .DMS-grid-span-2-padding,
+                .DMS-grid-span-1 {
+                    grid-column: span 3;
+                    padding-right: 0;
+                    /*border: 1px solid red;*/
+                    /*text-align: center;*/
+                    width: 100%;
+                }
+
+                .DMS-text-center-smsc {
+                    text-align: center;
+                }
+
+                header,
+                section,
+                footer {
+                    padding: var(--DMS-space-15) var(--DMS-space-4);
+                }
+
+                .DMS-button-group-flex {
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .DMS-button-group {
+                    padding: var(--DMS-space-2) var(--DMS-space-2);
+                }
+
+                .DMS-slide-footer {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: var(--DMS-space-4);
+                    text-align: center;
+                }
+
+                .DMS-stepper-container {
+                    flex-wrap: wrap;
+                }
+
+                .DMS-stepper-container::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 0;
+                    background-color: var(--DMS-border-light);
+                    z-index: 1;
+                    /*border: 1px solid blue;*/
+                }
+
+                .DMS-step-button {
+                    flex-direction: row;
+                    padding: var(--DMS-space-4);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="DMS-container">
+            <header class="DMS-grid-3 DMS-text-center-smsc">
+                <div class="DMS-grid-span-2-padding">
+                    <span class="DMS-uppercase DMS-mono DMS-text-green"
+                        ># Teknologi DMS Group</span
+                    >
+                    <h2>Studi Kasus Unggulan</h2>
+                    <p>
+                        Pelajari bagaimana kami membantu perusahaan terkemuka
+                        mengatasi tantangan kompleks dan mencapai target bisnis
+                        mereka.
+                    </p>
+                </div>
+                <div class="DMS-grid-span-1 DMS-button-group-flex">
+                    <div class="DMS-button-group">
+                        <button data-index="0" class="DMS-button-active">
+                            Manufaktur
+                        </button>
+                        <button data-index="1">Distribusi</button>
+                        <button data-index="2">Retail</button>
+                    </div>
+                </div>
+            </header>
+            <section class="DMS-grid-3">
+                <div class="DMS-grid-span-2-padding">
+                    <div>
+                        <span
+                            id="h-industry"
+                            class="DMS-text-green DMS-uppercase DMS-mono"
+                            >Industri Manufaktur</span
+                        >
+                        <h1 id="h-company">PT Maju Manufaktur Nusantara</h1>
+                        <p id="h-description">
+                            Transformasi operasional pabrik menuju industri 4.0
+                            dengan visibilitas data end-to-end.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="DMS-flex">
+                            <div>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="36"
+                                    height="36"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-target DMS-icon-adjust"
+                                >
+                                    <circle cx="12" cy="12" r="10" />
+                                    <circle cx="12" cy="12" r="6" />
+                                    <circle cx="12" cy="12" r="2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Tantangan Bisnis</h3>
+                                <p id="h-challenge">
+                                    Proses produksi masih mengandalkan
+                                    pencatatan manual yang rentan kesalahan,
+                                    menyebabkan data tidak real-time dan
+                                    menyulitkan pengambilan keputusan strategis
+                                    saat terjadi bottleneck di lantai pabrik.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="DMS-flex">
+                            <div>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="36"
+                                    height="36"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-lightbulb DMS-icon-adjust"
+                                >
+                                    <path
+                                        d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"
+                                    />
+                                    <path d="M9 18h6" />
+                                    <path d="M10 22h4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Solusi DMS Group</h3>
+                                <p id="h-solution">
+                                    Proses produksi masih mengandalkan
+                                    pencatatan manual yang rentan kesalahan,
+                                    menyebabkan data tidak real-time dan
+                                    menyulitkan pengambilan keputusan strategis
+                                    saat terjadi bottleneck di lantai pabrik.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="DMS-flex">
+                            <div>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="36"
+                                    height="36"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-trending-up DMS-icon-adjust"
+                                >
+                                    <path d="M16 7h6v6" />
+                                    <path d="m22 7-8.5 8.5-5-5L2 17" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Hasil Implementasi</h3>
+                                <p id="h-implementation">
+                                    Proses produksi masih mengandalkan
+                                    pencatatan manual yang rentan kesalahan,
+                                    menyebabkan data tidak real-time dan
+                                    menyulitkan pengambilan keputusan strategis
+                                    saat terjadi bottleneck di lantai pabrik.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="DMS-grid-span-1 DMS-text-center-smsc">
+                    <h3>Dampak Terukur</h3>
+                    <div id="h-impact">
+                        <div>
+                            <h1 class="DMS-text-green">
+                                +35%
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="36"
+                                    height="36"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-move-up-right-icon lucide-move-up-right"
+                                >
+                                    <path d="M13 5H19V11" />
+                                    <path d="M19 5L5 19" />
+                                </svg>
+                            </h1>
+                            <p>Efisiensi Produksi</p>
+                        </div>
+                        <div>
+                            <h1 class="DMS-text-green">
+                                +35%
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="36"
+                                    height="36"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-move-up-right-icon lucide-move-up-right"
+                                >
+                                    <path d="M13 5H19V11" />
+                                    <path d="M19 5L5 19" />
+                                </svg>
+                            </h1>
+                            <p>Efisiensi Produksi</p>
+                        </div>
+                        <div>
+                            <h1 class="DMS-text-green">
+                                +35%
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="36"
+                                    height="36"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-move-up-right-icon lucide-move-up-right"
+                                >
+                                    <path d="M13 5H19V11" />
+                                    <path d="M19 5L5 19" />
+                                </svg>
+                            </h1>
+                            <p>Efisiensi Produksi</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <a id="h-link" href="#" class="DMS-text-green"
+                        >Unduh Studi Kasus Lengkap
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-move-up-right-icon lucide-move-up-right"
+                        >
+                            <path d="M13 5H19V11" />
+                            <path d="M19 5L5 19" /></svg
+                    ></a>
+                </div>
+            </section>
+        </div>
+        <div class="DMS-dark-wrapper">
+            <div class="DMS-container-dark">
+                <div class="DMS-testimonial-header">
+                    <h1>Kepercayaan yang Dibangun Melalui Hasil</h1>
+                    <p>
+                        Dengarkan langsung dari para pemimpin bisnis tentang
+                        bagaimana solusi kami membantu mereka bertransformasi.
+                    </p>
+                </div>
+
+                <div class="DMS-slideshow-container">
+                    <div class="DMS-mySlides">
+                        <div class="DMS-quote">
+                            <h3>
+                                "DMS Group tidak hanya memberikan perangkat
+                                lunak, tetapi mereka benar-benar memahami proses
+                                bisnis kami. Transformasi yang kami lakukan
+                                bersama mereka telah menghemat ribuan jam kerja
+                                operasional setiap bulannya."
+                            </h3>
+                        </div>
+                        <hr class="DMS-divider" />
+                        <div class="DMS-slide-footer">
+                            <div class="DMS-author-info">
+                                <h3>Budi Santoso</h3>
+                                <p>
+                                    Direktur Operasional, PT Maju Manufaktur
+                                    Nusantara
+                                </p>
+                            </div>
+                            <div class="DMS-metric-badge">
+                                <p class="DMS-text-green">
+                                    Efisiensi operasional meningkat 35%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="DMS-mySlides">
+                        <div class="DMS-quote-wrapper">
+                            <h3>
+                                "Mollitia dolores quod, reprehenderit optio
+                                nulla excepturi, ab suscipit quisquam tenetur
+                                cum deleniti aliquid nobis sequi impedit
+                                inventore adipisci aliquam velit minus!"
+                            </h3>
+                        </div>
+                        <hr class="DMS-divider" />
+                        <div class="DMS-slide-footer">
+                            <div class="DMS-author-info">
+                                <h3>Budi</h3>
+                                <p>CEO</p>
+                            </div>
+                            <div class="DMS-metric-badge">
+                                <p class="DMS-text-green">
+                                    Downtime armada berkurang 40%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="DMS-mySlides">
+                        <div class="DMS-quote-wrapper">
+                            <h3>
+                                "Mollitia dolores quod, reprehenderit optio
+                                nulla excepturi, ab suscipit quisquam tenetur
+                                cum deleniti aliquid nobis sequi impedit
+                                inventore adipisci aliquam velit minus!"
+                            </h3>
+                        </div>
+                        <hr class="DMS-divider" />
+                        <div class="DMS-slide-footer">
+                            <div class="DMS-author-info">
+                                <h3>Budi</h3>
+                                <p>CEO</p>
+                            </div>
+                            <div class="DMS-metric-badge">
+                                <p class="DMS-text-green">
+                                    Downtime armada berkurang 40%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="DMS-controls-wrapper">
+                        <button
+                            class="DMS-nav-btn DMS-prev"
+                            onclick="plusSlides(-1)"
+                        >
+                            ❮
+                        </button>
+                        <div class="DMS-dots-group">
+                            <span
+                                class="DMS-dot"
+                                onclick="currentSlide(1)"
+                            ></span>
+                            <span
+                                class="DMS-dot"
+                                onclick="currentSlide(2)"
+                            ></span>
+                            <span
+                                class="DMS-dot"
+                                onclick="currentSlide(3)"
+                            ></span>
+                        </div>
+                        <button
+                            class="DMS-nav-btn DMS-next"
+                            onclick="plusSlides(1)"
+                        >
+                            ❯
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="DMS-container">
+            <section>
+                <span class="DMS-uppercase DMS-mono DMS-text-green"
+                    >[ studi kasus ]</span
+                >
+                <h1>Metodologi yang Teruji untuk Setiap Proyek</h1>
+                <p>
+                    Pendekatan sistematis kami dirancang untuk meminimalisir
+                    risiko dan memastikan keberhasilan implementasi di setiap
+                    skala perusahaan.
+                </p>
+            </section>
+            <section>
+                <div class="DMS-stepper-container">
+                    <button class="DMS-step-button active" data-index="0">
+                        <div class="DMS-step-circle">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-search"
+                            >
+                                <path d="m21 21-4.34-4.34" />
+                                <circle cx="11" cy="11" r="8" />
+                            </svg>
+                        </div>
+                        <span>Analisis Kebutuhan</span>
+                    </button>
+
+                    <button class="DMS-step-button" data-index="1">
+                        <div class="DMS-step-circle">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-pen-tool"
+                            >
+                                <path
+                                    d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"
+                                />
+                                <path
+                                    d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"
+                                />
+                                <path d="m2.3 2.3 7.286 7.286" />
+                                <circle cx="11" cy="11" r="2" />
+                            </svg>
+                        </div>
+                        <span>Perancangan Solusi</span>
+                    </button>
+
+                    <button class="DMS-step-button" data-index="2">
+                        <div class="DMS-step-circle">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-settings"
+                            >
+                                <path
+                                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"
+                                />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </div>
+                        <span>Implementasi</span>
+                    </button>
+
+                    <button class="DMS-step-button" data-index="3">
+                        <div class="DMS-step-circle">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-chart-line"
+                            >
+                                <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+                                <path d="m19 9-5 5-4-4-3 3" />
+                            </svg>
+                        </div>
+                        <span>Optimisasi</span>
+                    </button>
+                </div>
+                <div class="DMS-requirement-analysis">
+                    <h2 id="m-header">
+                        <span id="m-number">01</span>
+                        <span id="m-title">Analisis Kebutuhan</span>
+                    </h2>
+                    <p id="m-description">
+                        Kami memulai dengan audit mendalam terhadap proses
+                        bisnis Anda saat ini. Tim konsultan kami akan
+                        mengidentifikasi bottleneck, inefisiensi, dan peluang
+                        perbaikan untuk merumuskan strategi transformasi yang
+                        tepat sasaran.
+                    </p>
+                </div>
+                <div>
+                    <span class="DMS-mono DMS-text-green DMS-uppercase"
+                        ># Teknologi DMS Group</span
+                    >
+                    <h1>Dipercaya oleh Berbagai Industri</h1>
+                    <p>
+                        Pengalaman mendalam kami di berbagai sektor memungkinkan
+                        kami memberikan solusi praktis yang relevan dengan
+                        konteks industri Anda.
+                    </p>
+                </div>
+            </section>
+            <section>
+                <div
+                    class="DMS-custom-grid-border DMS-grid-4 DMS-text-center-smsc"
+                    id="industri-grid"
+                >
+                    <button
+                        class="DMS-custom-border DMS-industries-active"
+                        data-index="0"
+                    >
+                        <span id="ind-icon-0"></span>
+                        <p class="DMS-text-green">Manufaktur</p>
+                    </button>
+
+                    <button class="DMS-custom-border" data-index="1">
+                        <span id="ind-icon-1"></span>
+                        <p>Distribusi</p>
+                    </button>
+
+                    <button class="DMS-custom-border" data-index="2">
+                        <span id="ind-icon-2"></span>
+                        <p>Retail</p>
+                    </button>
+
+                    <button class="DMS-custom-border" data-index="3">
+                        <span id="ind-icon-3"></span>
+                        <p>Logistik</p>
+                    </button>
+
+                    <button class="DMS-custom-border" data-index="4">
+                        <span id="ind-icon-4"></span>
+                        <p>Keuangan</p>
+                    </button>
+
+                    <button class="DMS-custom-border" data-index="5">
+                        <span id="ind-icon-5"></span>
+                        <p>Kesehatan</p>
+                    </button>
+
+                    <button class="DMS-custom-border" data-index="6">
+                        <span id="ind-icon-6"></span>
+                        <p>Pendidikan</p>
+                    </button>
+
+                    <button class="DMS-custom-border" data-index="7">
+                        <span id="ind-icon-7"></span>
+                        <p>Lainnya</p>
+                    </button>
+
+                    <div
+                        class="DMS-custom-border DMS-grid-span-4-padding DMS-bg-light-green"
+                    >
+                        <span
+                            id="ind-banner-tag"
+                            class="DMS-mono DMS-text-green DMS-uppercase"
+                        >
+                            Dampak di Sektor Manufaktur
+                        </span>
+                        <p id="ind-banner-desc">
+                            "Meningkatkan OEE rata-rata sebesar 25% di lebih
+                            dari 40 pabrik berskala nasional."
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--<script src="script.js" />-->
+        <script>
+            const studiKasusUnggulan = [
+                {
+                    name: "Manufaktur",
+                    industry: "Industri Manufaktur",
+                    company: "PT Maju Manufaktur Nusantara",
+                    description:
+                        "Transformasi operasional pabrik menuju industri 4.0 dengan visibilitas data end-to-end.",
+                    challenge:
+                        "Proses produksi masih mengandalkan pencatatan manual yang rentan kesalahan, menyebabkan data tidak real-time dan menyulitkan pengambilan keputusan strategis saat terjadi bottleneck di lantai pabrik.",
+                    solution:
+                        "Implementasi sistem ERP terintegrasi dengan modul monitoring produksi IoT, memberikan dashboard analitik real-time untuk melacak OEE (Overall Equipment Effectiveness) dan status inventori.",
+                    implementation:
+                        "Perusahaan berhasil menghilangkan silo data, mempercepat respon terhadap masalah mesin, dan mengoptimalkan kapasitas produksi secara keseluruhan dalam waktu 6 bulan implementasi.",
+                    impact: [
+                        {
+                            desc: "Efisiensi Produksi",
+                            value: "+35%",
+                        },
+                        {
+                            desc: "Downtime Mesin",
+                            value: "-40%",
+                        },
+                        {
+                            desc: "Akurasi Inventory",
+                            value: "99%",
+                        },
+                    ],
+                    caseStudyUrl: "https://example.com",
+                },
+                {
+                    name: "Distribusi",
+                    industry: "Industri Distribusi",
+                    company: "PT Maju Distribusi Nusantara",
+                    description:
+                        "Transformasi operasional pabrik menuju distribusi 4.0 dengan visibilitas data end-to-end.",
+                    challenge:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    solution:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    implementation:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    impact: [
+                        {
+                            desc: "Efisiensi Distribusi",
+                            value: "+35%",
+                        },
+                        {
+                            desc: "Downtime Kendaraan",
+                            value: "-40%",
+                        },
+                        {
+                            desc: "Akurasi Inventory",
+                            value: "100%",
+                        },
+                    ],
+                    caseStudyUrl: "https://example.com",
+                },
+                {
+                    name: "Retail",
+                    industry: "Industri Retail",
+                    company: "PT Maju Retail Nusantara",
+                    description:
+                        "Transformasi operasional pabrik menuju retail 4.0 dengan visibilitas data end-to-end.",
+                    challenge:
+                        "Vestibulum convallis ex et turpis sodales, ac cursus arcu aliquam. Ut ut turpis turpis. Sed id volutpat nulla, ut blandit eros.",
+                    solution:
+                        "Vestibulum convallis ex et turpis sodales, ac cursus arcu aliquam. Ut ut turpis turpis. Sed id volutpat nulla, ut blandit eros.",
+                    implementation:
+                        "Vestibulum convallis ex et turpis sodales, ac cursus arcu aliquam. Ut ut turpis turpis. Sed id volutpat nulla, ut blandit eros.",
+                    impact: [
+                        {
+                            desc: "Efisiensi Retail",
+                            value: "+35%",
+                        },
+                        {
+                            desc: "Downtime Etalase",
+                            value: "-40%",
+                        },
+                        {
+                            desc: "Akurasi Inventory",
+                            value: "101%",
+                        },
+                    ],
+                    caseStudyUrl: "https://example.com",
+                },
+            ];
+
+            function renderCaseStudy(index) {
+                const data = studiKasusUnggulan[index];
+
+                document.getElementById("h-industry").textContent =
+                    data.industry;
+                document.getElementById("h-company").textContent = data.company;
+                document.getElementById("h-description").textContent =
+                    data.description;
+                document.getElementById("h-challenge").textContent =
+                    data.challenge;
+                document.getElementById("h-solution").textContent =
+                    data.solution;
+                document.getElementById("h-implementation").textContent =
+                    data.implementation;
+                document.getElementById("h-link").href = data.caseStudyUrl;
+
+                const impactContainer = document.getElementById("h-impact");
+                impactContainer.innerHTML = data.impact
+                    .map(
+                        (item) => `
+              <div>
+                <h1 class="DMS-text-green">
+                  ${item.value}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-move-up-right-icon lucide-move-up-right"
+                  >
+                    <path d="M13 5H19V11" />
+                    <path d="M19 5L5 19" />
+                  </svg>
+                </h1>
+                <p>${item.desc}</p>
+              </div>
+            `,
+                    )
+                    .join("");
+            }
+
+            function initTabs() {
+                const buttons = document.querySelectorAll(
+                    ".DMS-button-group button",
+                );
+
+                buttons.forEach((button) => {
+                    button.addEventListener("click", (e) => {
+                        const clickedIndex = parseInt(
+                            e.target.getAttribute("data-index"),
+                            10,
+                        );
+
+                        buttons.forEach((btn) =>
+                            btn.classList.remove("DMS-button-active"),
+                        );
+                        e.target.classList.add("DMS-button-active");
+
+                        renderCaseStudy(clickedIndex);
+                    });
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                initTabs();
+                renderCaseStudy(0);
+            });
+
+            const metodologi = [
+                {
+                    icon: "",
+                    name: "Analisis Kebutuhan",
+                    description:
+                        "Kami memulai dengan audit mendalam terhadap proses bisnis Anda saat ini. Tim konsultan kami akan mengidentifikasi bottleneck, inefisiensi, dan peluang perbaikan untuk merumuskan strategi transformasi yang tepat sasaran.",
+                },
+                {
+                    icon: "",
+                    name: "Perancangan Solusi",
+                    description:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                },
+                {
+                    icon: "",
+                    name: "Implementasi",
+                    description:
+                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                },
+                {
+                    icon: "",
+                    name: "Optimisasi",
+                    description:
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+                },
+            ];
+
+            function renderMetodologi(index) {
+                const data = metodologi[index];
+
+                const formattedNumber = String(index + 1).padStart(2, "0");
+
+                document.getElementById("m-number").textContent =
+                    formattedNumber;
+                document.getElementById("m-title").textContent = data.name;
+                document.getElementById("m-description").textContent =
+                    data.description;
+            }
+
+            function initMetodologiTabs() {
+                const buttons = document.querySelectorAll(
+                    ".DMS-stepper-container .DMS-step-button",
+                );
+
+                buttons.forEach((button) => {
+                    button.addEventListener("click", (e) => {
+                        const targetButton =
+                            e.target.closest(".DMS-step-button");
+                        const clickedIndex = parseInt(
+                            targetButton.getAttribute("data-index"),
+                            10,
+                        );
+
+                        buttons.forEach((btn) =>
+                            btn.classList.remove("active"),
+                        );
+                        targetButton.classList.add("active");
+
+                        renderMetodologi(clickedIndex);
+                    });
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                initMetodologiTabs();
+                renderMetodologi(0);
+            });
+
+            const industri = [
+                {
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>`,
+                    name: "Manufaktur",
+                    description:
+                        "Meningkatkan OEE rata-rata sebesar 25% di lebih dari 40 pabrik berskala nasional.",
+                },
+                {
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>`,
+                    name: "Distribusi",
+                    description:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                },
+                {
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>`,
+                    name: "Retail",
+                    description:
+                        "Consectetur adipiscing elit sed do eiusmod tempor.",
+                },
+                {
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
+                    name: "Logistik",
+                    description:
+                        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                },
+                {
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>`,
+                    name: "Keuangan",
+                    description:
+                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+                },
+                {
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>`,
+                    name: "Kesehatan",
+                    description:
+                        "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+                },
+                {
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>`,
+                    name: "Pendidikan",
+                    description:
+                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+                },
+                {
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>`,
+                    name: "Lainnya",
+                    description:
+                        "Excepteur sint occaecat cupidatat non proident.",
+                },
+            ];
+
+            function renderTileIcons() {
+                industri.forEach((item, index) => {
+                    const iconContainer = document.getElementById(
+                        `ind-icon-${index}`,
+                    );
+                    if (iconContainer) {
+                        iconContainer.innerHTML = item.icon;
+                    }
+                });
+            }
+
+            function renderIndustriBanner(index) {
+                const data = industri[index];
+
+                document.getElementById("ind-banner-tag").textContent =
+                    `Dampak di Sektor ${data.name}`;
+                document.getElementById("ind-banner-desc").textContent =
+                    `"${data.description}"`;
+            }
+
+            function initIndustriTabs() {
+                const tiles = document.querySelectorAll(
+                    "#industri-grid button.DMS-custom-border",
+                );
+
+                tiles.forEach((tile) => {
+                    tile.addEventListener("click", (e) => {
+                        const targetBtn = e.target.closest("button");
+                        const clickedIndex = parseInt(
+                            targetBtn.getAttribute("data-index"),
+                            10,
+                        );
+
+                        tiles.forEach((btn) => {
+                            btn.classList.remove("DMS-industries-active");
+
+                            const textNode = btn.querySelector("p");
+                            if (textNode)
+                                textNode.classList.remove("DMS-text-green");
+
+                            const svgNode = btn.querySelector("svg");
+                            if (svgNode) {
+                                svgNode.classList.remove(
+                                    "DMS-industries-icon-active",
+                                );
+                                svgNode.classList.add("DMS-industries-icon");
+                            }
+                        });
+
+                        targetBtn.classList.add("DMS-industries-active");
+
+                        const activeText = targetBtn.querySelector("p");
+                        if (activeText)
+                            activeText.classList.add("DMS-text-green");
+
+                        const activeSvg = targetBtn.querySelector("svg");
+                        if (activeSvg) {
+                            activeSvg.classList.remove("DMS-industries-icon");
+                            activeSvg.classList.add(
+                                "DMS-industries-icon-active",
+                            );
+                        }
+
+                        renderIndustriBanner(clickedIndex);
+                    });
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                renderTileIcons();
+                initIndustriTabs();
+                renderIndustriBanner(0);
+            });
+
+            let slideIndex = 1;
+
+            function plusSlides(n) {
+                showSlides((slideIndex += n));
+            }
+
+            function currentSlide(n) {
+                showSlides((slideIndex = n));
+            }
+
+            function showSlides(n) {
+                let slides = document.getElementsByClassName("DMS-mySlides");
+                let dots = document.getElementsByClassName("DMS-dot");
+
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].classList.remove("DMS-active");
+                }
+
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].classList.add("DMS-active");
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                showSlides(slideIndex);
+            });
+        </script>
+    </body>
+</html>
